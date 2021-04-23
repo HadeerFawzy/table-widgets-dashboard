@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
-import { makeStyles, Drawer, List, ListItem, ListItemIcon, ListItemText, IconButton, Hidden, Typography, Collapse, Box } from '@material-ui/core';
+import { makeStyles, Drawer, List, ListItem, ListItemIcon, ListItemText, Collapse, Box } from '@material-ui/core';
 import clsx from 'clsx';
-import CloseIcon from '@material-ui/icons/Close';
 import AvTimerOutlinedIcon from '@material-ui/icons/AvTimerOutlined';
 import TableChartOutlinedIcon from '@material-ui/icons/TableChartOutlined';
 import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
@@ -125,9 +124,7 @@ const Sidebar = ( ) => {
   }
 
   const toggleActiveClass = (id) => {
-    sidebarItems.map((item, index) => {
-      item.id === id ? (item.active = true) : (item.active = false) 
-    })
+    sidebarItems.map((item, index) => item.id === id ? (item.active = true) : (item.active = false))
     setSidebarItems([...sidebarItems])
   }
 
