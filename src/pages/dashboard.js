@@ -12,12 +12,15 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(2),
     marginLeft: (props) => -props.sidebarWidth,
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    [theme.breakpoints.up('md')]: {
+      padding: theme.spacing(3),
+    }
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
