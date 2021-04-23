@@ -146,14 +146,6 @@ const Sidebar = ( ) => {
           <Box mt={2} mb={1} display='flex' justifyContent='center'>
             <img src={logo} alt='Activities Dashboard' className={classes.logo}/> 
           </Box>
-          <Hidden mdUp>
-            <Typography className={classes.appName}>
-              Activities Dashboard
-            </Typography>
-            <IconButton className={classes.closeIcon} onClick={sidebarInfo.onToggleSidebar}>
-              <CloseIcon/>
-            </IconButton>
-          </Hidden>
         </div>
         <List>
           {sidebarItems.map((item, index) => (
