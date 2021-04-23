@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/table-widgets-dashboard/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/table-widgets-dashboard/static/js/main.bb3a1f78.chunk.js",
+    "main.js.map": "/table-widgets-dashboard/static/js/main.bb3a1f78.chunk.js.map",
+    "runtime-main.js": "/table-widgets-dashboard/static/js/runtime-main.fac6acb3.js",
+    "runtime-main.js.map": "/table-widgets-dashboard/static/js/runtime-main.fac6acb3.js.map",
+    "static/js/2.942e649b.chunk.js": "/table-widgets-dashboard/static/js/2.942e649b.chunk.js",
+    "static/js/2.942e649b.chunk.js.map": "/table-widgets-dashboard/static/js/2.942e649b.chunk.js.map",
+    "static/js/3.e8bda026.chunk.js": "/table-widgets-dashboard/static/js/3.e8bda026.chunk.js",
+    "static/js/3.e8bda026.chunk.js.map": "/table-widgets-dashboard/static/js/3.e8bda026.chunk.js.map",
+    "index.html": "/table-widgets-dashboard/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/table-widgets-dashboard/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.942e649b.chunk.js.LICENSE.txt": "/table-widgets-dashboard/static/js/2.942e649b.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/table-widgets-dashboard/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fac6acb3.js",
+    "static/js/2.942e649b.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.bb3a1f78.chunk.js"
+  ]
+}
