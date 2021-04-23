@@ -23,8 +23,11 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: 0,
     color: theme.palette.common.white,
+    [theme.breakpoints.up('md')]: {
+      marginRight: theme.spacing(2),
+    }
   },
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {
@@ -43,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: theme.typography.pxToRem(20),
     lineHeight: theme.spacing(3),
-    fontWeight: "300",
+    fontWeight: "500",
     [theme.breakpoints.up("md")]: {
       display: "block",
     },
