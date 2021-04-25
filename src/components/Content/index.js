@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Box } from "@material-ui/core";
 import DatePicker from "components/Content/DatePicker";
+import TableComponent from "components/Content/TableComponent"
+
 import moment from 'moment';
 
 const Content = () => {
@@ -18,7 +20,7 @@ const Content = () => {
   return (
     <Box>
       <DatePicker dateRange={dateRange} onDateChange={onDateChange} />
-      CONTENT GOES HERE
+      <TableComponent/>
     </Box>
   );
 };

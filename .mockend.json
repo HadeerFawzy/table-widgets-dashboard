@@ -1,0 +1,9 @@
+{
+  "Application": {
+    "id": "int",
+    "user_name": "string",
+    "user_role": "string",
+    "duration": "int",
+    "date": "date"
+  }
+}
