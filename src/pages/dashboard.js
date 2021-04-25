@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
   appRoot: {
     display: 'flex',
     minHeight: '100vh',
+    boxShadow: 'none',
   },
   content: {
     flexGrow: 1,

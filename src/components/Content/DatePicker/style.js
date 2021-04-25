@@ -83,7 +83,7 @@ const DatePickerStyle = (theme) => ({
       fill: `${theme.palette.secondary.main}`
     },
     '& .DateRangePickerInput_arrow': {
-      margin: theme.spacing(0, 6, 0, 0)
+      margin: theme.spacing(0, 1, 0, 0)
     }
   },
 });
