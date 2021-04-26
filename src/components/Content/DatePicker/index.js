@@ -29,7 +29,7 @@ const DatePicker = ({ dateRange, onDateChange }) => {
     minimumNights: 1,
     hideKeyboardShortcutsPanel: true,
     keepOpenOnDateSelect: false,
-    isOutsideRange: day => isInclusivelyAfterDay(moment(day), moment(new Date()).subtract(0, 'days')),
+    isOutsideRange: day => isInclusivelyAfterDay(moment(day), moment(new Date()).add(1, 'days')),
     displayFormat: "DD-MM-YYYY",
     onClose: () => console.log('close'),
     showClearDates: true,
