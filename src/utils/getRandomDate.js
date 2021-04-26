@@ -4,7 +4,7 @@
   const getRandomDate = () => {
     const start = new Date("01, 01, 2020");
     const end = new Date();
-    var date = new Date(start + Math.random() * (end - start));
+    var date = new Date(+start + Math.random() * (end - start));
     return date;
   };
 
