@@ -7,6 +7,9 @@ const DatePickerStyle = (theme) => ({
     [theme.breakpoints.up("md")]: {
       justifyContent: 'flex-end',
     },
+    '& .DateRangePicker_picker': {
+      zIndex: '99',
+    },
     // inputs wrapper
     '& .DateRangePickerInput__showClearDates': {
       display: 'flex',
