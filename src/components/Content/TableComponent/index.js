@@ -18,9 +18,14 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(2),
     },
   },
+  tableBox: {
+    maxWidth: '100%',
+    border: `1px solid`,
+    borderRadius: '2px'
+  }
 }));
 
-const TableComponent = ({ loading, tableData, subHeaderComponent }) => {
+const TableComponent = ({ loading, title, tableData, subHeaderComponent }) => {
   const classes = useStyles();
   const { themeToggle } = useContext(LayoutContext);
 
@@ -29,6 +34,7 @@ const TableComponent = ({ loading, tableData, subHeaderComponent }) => {
       name: "ID",
       selector: "id",
       sortable: false,
+      width: '70px'
     },
     {
       name: "User Name",
@@ -53,9 +59,9 @@ const TableComponent = ({ loading, tableData, subHeaderComponent }) => {
   ];
 
   return (
-    <Box my={4} maxWidth={`100%`}>
+    <Box className={classes.tableBox}>
       <DataTable
-        title="Activites Table"
+        title={title}
         columns={columns}
         data={tableData}
         progressPending={loading}
