@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/table-widgets-dashboard/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/table-widgets-dashboard/static/js/main.f210f5d2.chunk.js",
-    "main.js.map": "/table-widgets-dashboard/static/js/main.f210f5d2.chunk.js.map",
-    "runtime-main.js": "/table-widgets-dashboard/static/js/runtime-main.68298825.js",
-    "runtime-main.js.map": "/table-widgets-dashboard/static/js/runtime-main.68298825.js.map",
+    "main.js": "/table-widgets-dashboard/static/js/main.d5fa9f8b.chunk.js",
+    "main.js.map": "/table-widgets-dashboard/static/js/main.d5fa9f8b.chunk.js.map",
+    "runtime-main.js": "/table-widgets-dashboard/static/js/runtime-main.55037401.js",
+    "runtime-main.js.map": "/table-widgets-dashboard/static/js/runtime-main.55037401.js.map",
     "static/css/2.8f0c9fae.chunk.css": "/table-widgets-dashboard/static/css/2.8f0c9fae.chunk.css",
-    "static/js/2.d4070f66.chunk.js": "/table-widgets-dashboard/static/js/2.d4070f66.chunk.js",
-    "static/js/2.d4070f66.chunk.js.map": "/table-widgets-dashboard/static/js/2.d4070f66.chunk.js.map",
-    "static/js/3.a2f88937.chunk.js": "/table-widgets-dashboard/static/js/3.a2f88937.chunk.js",
-    "static/js/3.a2f88937.chunk.js.map": "/table-widgets-dashboard/static/js/3.a2f88937.chunk.js.map",
+    "static/js/2.1c839dd2.chunk.js": "/table-widgets-dashboard/static/js/2.1c839dd2.chunk.js",
+    "static/js/2.1c839dd2.chunk.js.map": "/table-widgets-dashboard/static/js/2.1c839dd2.chunk.js.map",
+    "static/js/3.cae9d986.chunk.js": "/table-widgets-dashboard/static/js/3.cae9d986.chunk.js",
+    "static/js/3.cae9d986.chunk.js.map": "/table-widgets-dashboard/static/js/3.cae9d986.chunk.js.map",
     "index.html": "/table-widgets-dashboard/index.html",
     "static/css/2.8f0c9fae.chunk.css.map": "/table-widgets-dashboard/static/css/2.8f0c9fae.chunk.css.map",
     "static/css/main.6dea0f05.chunk.css.map": "/table-widgets-dashboard/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.d4070f66.chunk.js.LICENSE.txt": "/table-widgets-dashboard/static/js/2.d4070f66.chunk.js.LICENSE.txt",
+    "static/js/2.1c839dd2.chunk.js.LICENSE.txt": "/table-widgets-dashboard/static/js/2.1c839dd2.chunk.js.LICENSE.txt",
     "static/media/eventum-logo.40c74143.png": "/table-widgets-dashboard/static/media/eventum-logo.40c74143.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.68298825.js",
+    "static/js/runtime-main.55037401.js",
     "static/css/2.8f0c9fae.chunk.css",
-    "static/js/2.d4070f66.chunk.js",
+    "static/js/2.1c839dd2.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.f210f5d2.chunk.js"
+    "static/js/main.d5fa9f8b.chunk.js"
   ]
 }
