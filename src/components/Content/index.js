@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box, Grid, Typography } from "@material-ui/core";
 import DatePicker from "components/Content/DatePicker";
 import TableComponent from "components/Content/TableComponent";
-import SearchComponent from "components/Content/TableComponent/search-component";
-import fetchTableData from "utils/fetchTableData";
-import filterByDate from "utils/filterByDate";
-import filterByName from "utils/filterByName";
 
 const Content = () => {
-  const [originaTableData, setOriginalTableData] = useState([]);
-  const [tableData, setTableData] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   const [dateRange, setDateRange] = useState({
     startDate: null,
@@ -22,34 +15,6 @@ const Content = () => {
       startDate,
       endDate,
     });
-    // FILTER
-    if (startDate && endDate) {
-      const filteredTableByDate = filterByDate(
-        {
-          startDate,
-          endDate,
-        },
-        originaTableData,
-        setLoading
-      );
-      setTableData([...filteredTableByDate]);
-    } else {
-      setTableData([...originaTableData]);
-    }
-  };
-
-  useEffect(() => {
-    fetchTableData({
-      setLoading,
-      successCallBack: (res) => {
-        setOriginalTableData([...res]);
-        setTableData([...res]);
-      },
-    });
-  }, []);
-
-  const onSearchChange = (name) => {
-    setTableData([...filterByName(name, originaTableData, setLoading)]);
   };
 
   return (
@@ -62,31 +27,19 @@ const Content = () => {
         <Grid item xs={12} lg={6}>
           <TableComponent
             title="Activities Table One"
-            tableData={tableData}
-            loading={loading}
-            subHeaderComponent={
-              <SearchComponent onChangeCallBack={onSearchChange} />
-            }
+            dateRange={dateRange}
           />
         </Grid>
         <Grid item xs={12} lg={6}>
           <TableComponent
             title="Activities Table Two"
-            tableData={tableData}
-            loading={loading}
-            subHeaderComponent={
-              <SearchComponent onChangeCallBack={onSearchChange} />
-            }
+            dateRange={dateRange}
           />
         </Grid>
         <Grid item xs={12}>
           <TableComponent
             title="Activities Table Three"
-            tableData={tableData}
-            loading={loading}
-            subHeaderComponent={
-              <SearchComponent onChangeCallBack={onSearchChange} />
-            }
+            dateRange={dateRange}
           />
         </Grid>
       </Grid>

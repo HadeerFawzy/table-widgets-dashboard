@@ -1,84 +1,57 @@
-import React, { useContext } from "react";
-import DataTable from "react-data-table-component";
-import {
-  CircularProgress,
-  makeStyles,
-  Box,
-} from "@material-ui/core";
-import LayoutContext from "components/Layout/layout-context";
+import React, { useState, useEffect } from "react";
+import Table from "components/Content/TableComponent/table";
+import SearchComponent from "components/Content/TableComponent/search-component";
+import fetchTableData from "utils/fetchTableData";
+import filterByDate from "utils/filterByDate";
+import filterByName from "utils/filterByName";
 
-const useStyles = makeStyles((theme) => ({
-  loaderRoot: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: theme.spacing(6),
-    "& > * + *": {
-      marginTop: theme.spacing(2),
-    },
-  },
-  tableBox: {
-    maxWidth: '100%',
-    border: `1px solid`,
-    borderRadius: '2px'
+const TableComponent = ({ title, dateRange }) => {
+  const [originaTableData, setOriginalTableData] = useState([]);
+  const [tableData, setTableData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchTableData({
+      setLoading,
+      successCallBack: (res) => {
+        setOriginalTableData([...res]);
+        setTableData([...res]);
+      },
+    });
+  }, []);
+
+  const onSearchChange = (name) => {
+    setTableData([...filterByName(name, originaTableData, setLoading)]);
+  };
+
+  const onDateChange = () => {
+    if (dateRange.startDate && dateRange.endDate) {
+      const filteredTableByDate = filterByDate(
+        dateRange,
+        originaTableData,
+        setLoading
+      );
+      setTableData([...filteredTableByDate]);
+    } else {
+      setTableData([...originaTableData]);
+    }
   }
-}));
 
-const TableComponent = ({ loading, title, tableData, subHeaderComponent }) => {
-  const classes = useStyles();
-  const { themeToggle } = useContext(LayoutContext);
-
-  const columns = [
-    {
-      name: "ID",
-      selector: "id",
-      sortable: false,
-      width: '70px'
-    },
-    {
-      name: "User Name",
-      selector: "user_name",
-      sortable: true,
-    },
-    {
-      name: "User Role",
-      selector: "user_role",
-      sortable: false,
-    },
-    {
-      name: "Duration",
-      selector: "duration",
-      sortable: true,
-    },
-    {
-      name: "Date",
-      selector: "dateFormatted",
-      sortable: true,
-    },
-  ];
+  useEffect(() => {
+    onDateChange()
+  }, [dateRange]);
 
   return (
-    <Box className={classes.tableBox}>
-      <DataTable
+    <>
+      <Table
         title={title}
-        columns={columns}
-        data={tableData}
-        progressPending={loading}
-        progressComponent={
-          <div className={classes.loaderRoot}>
-            <CircularProgress />
-          </div>
+        tableData={tableData}
+        loading={loading}
+        subHeaderComponent={
+          <SearchComponent onChangeCallBack={onSearchChange} />
         }
-        persistTableHead
-        fixedHeader
-        responsive
-        theme={themeToggle === "dark" ? "dark" : "default"}
-        pagination
-        subHeader
-        subHeaderComponent={subHeaderComponent}
       />
-    </Box>
+    </>
   );
 };
 
