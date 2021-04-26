@@ -13,8 +13,10 @@ const fetchTableData = ({ setLoading, successCallBack }) => {
           const randomDate = getRandomDate();
           return {
             ...row,
+            user_img: `https://picsum.photos/id/${Math.floor(Math.random() * (row.id))}/100/100`,
             date: randomDate,
             dateFormatted: moment(randomDate).format("DD/MM/YYYY, hh:mm"),
+            duration: Math.floor(Math.random() * (8 - 1) + 1)
           };
         });
         successCallBack(dataFormatted);

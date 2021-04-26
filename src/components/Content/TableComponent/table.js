@@ -4,6 +4,9 @@ import {
   CircularProgress,
   makeStyles,
   Box,
+  Typography,
+  Avatar,
+  LinearProgress
 } from "@material-ui/core";
 import LayoutContext from "components/Layout/layout-context";
 
@@ -19,27 +22,51 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   tableBox: {
-    maxWidth: '100%',
+    maxWidth: "100%",
     border: `1px solid`,
-    borderRadius: '2px'
-  }
+    borderRadius: "2px",
+    margin: theme.spacing(1, 2),
+    [theme.breakpoints.up("md")]: {
+      margin: theme.spacing(0),
+    },
+  },
+  userImage: {
+    marginRight: theme.spacing(1)
+  },
 }));
 
 const Table = ({ loading, title, tableData, subHeaderComponent }) => {
   const classes = useStyles();
   const { themeToggle } = useContext(LayoutContext);
 
+  const UserImgNameCell = ({ row }) => (
+    <Box display="flex" alignItems="center">
+      <Avatar alt={row.user_name} src={row.user_img} className={classes.userImage}/>
+      <Typography>{row.user_name}</Typography>
+    </Box>
+  );
+
+  const DurationCell = ({ row }) => (
+    <Box>
+      <Box mb={1}>{`${row.duration} hours`}</Box>
+      <LinearProgress variant="determinate" value={row.duration* 10} />
+    </Box>
+  )
+
   const columns = [
     {
       name: "ID",
       selector: "id",
       sortable: false,
-      width: '70px'
+      width: "70px",
     },
     {
-      name: "User Name",
+      name: "User",
       selector: "user_name",
       sortable: true,
+      // grow: 4,
+      minWidth: '200px',
+      cell: (row) => <UserImgNameCell row={row} />,
     },
     {
       name: "User Role",
@@ -50,11 +77,13 @@ const Table = ({ loading, title, tableData, subHeaderComponent }) => {
       name: "Duration",
       selector: "duration",
       sortable: true,
+      cell: (row) => <DurationCell row={row}/>,
     },
     {
       name: "Date",
       selector: "dateFormatted",
       sortable: true,
+      minWidth: '180px',
     },
   ];
 
