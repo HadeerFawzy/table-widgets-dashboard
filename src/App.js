@@ -4,7 +4,7 @@ import { lightTheme, darkTheme } from "config/theme";
 import Dashboard from "pages/dashboard";
 
 const App = () => {
-  const [themeToggle, setThemeToggle] = useState("dark");
+  const [themeToggle, setThemeToggle] = useState("light");
 
   return (
     <ThemeProvider
