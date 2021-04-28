@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles, Paper } from "@material-ui/core";
 import clsx from "clsx";
 import Layout from "components/Layout";
 import LayoutContext from "components/Layout/layout-context";
 import Content from "components/Content";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
   appRoot: {
@@ -43,7 +44,12 @@ const useStyles = makeStyles((theme) => ({
 
 const Dashboard = ({ themeToggle, setThemeToggle }) => {
   const sidebarWidth = 240;
-  const [toggleSidebar, setToggleSidebar] = React.useState(true);
+  const mediumScreen = useMediaQuery('(max-width:768px)');
+  const [toggleSidebar, setToggleSidebar] = React.useState(!mediumScreen);
+
+  useEffect(() => {
+    setToggleSidebar(!mediumScreen);
+  }, [mediumScreen]);
 
   const onToggleSidebar = () => {
     setToggleSidebar(toggleSidebar ? false : true);
